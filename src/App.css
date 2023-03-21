@@ -8,6 +8,7 @@
 
 body{
   margin: 0;
+
 }
 nav{
   display: flex;
@@ -67,7 +68,7 @@ nav{
   width: 30%;
 }
 button{
-  /* border: none; */
+
   padding-inline: 10%;
   background-color: transparent;
   font-size: 1.3rem;
@@ -81,11 +82,19 @@ button{
   display: flex;
   flex-direction: column;
   position: relative;
-  
 }
 .like-btn{
   position: absolute;
   left: 88%;
+  padding-inline: 1%;
+  top: 1%;
+  border: none;
+  transition-duration:.1s;
+  font-size: 20.8px;
+}
+.dislike-btn{
+  position: absolute;
+  left: 10%;
   padding-inline: 1%;
   top: 1%;
   border: none;
@@ -100,17 +109,35 @@ button{
 .like-btn:active{
   transform: scale(0.5);
 }
+.favs-art{
+  font-size: 13px;
+}
 .artist-info{
+font-size: 10px;
+}
+
+.artist-info__ul{
   font-weight: 550;
   text-align: end;
   border-right: 2px solid darkorchid;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0; 
 }
+
 #artist-info-btn{
   font-size: 1.3rem;
 }
-.favourites{
-  border: solid black 1px;
+.blog{
+  /* background-color:rgba(77, 77, 77, 0.120); */
+
+}
+.blog-foto{
+height: 300px;
+/* width: 10px; */
+background:rgb(194, 49, 49);
+
+}
+.blog-info{
+  font-style:italic;
 }

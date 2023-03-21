@@ -16,7 +16,7 @@ function GalleryProvider (props) {
         const galleryApiData = galleryApi.data
         const ArtistInfoApiDataOG =ArtistInfoApiOG.data
          ArtistInfoApiOG.data.push(...ArtistInfoApiOG.data)
-        console.log(ArtistInfoApiDataOG)
+        console.log(galleryApiData)
 
         if((galleryApi && ArtistInfoApiOG).status==200){
             setArtistInfo(ArtistInfoApiDataOG)

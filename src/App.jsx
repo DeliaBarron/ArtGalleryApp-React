@@ -8,7 +8,6 @@ import AppRoutes from './assets/routes/AppRoutes.jsx';
 
 //context
 import { GalleryProvider } from './context/galleryContext.jsx'
-import Profile from './pages/Profile';
 
 function App() {
 

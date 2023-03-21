@@ -3,47 +3,33 @@ import ArtistInfo from './ArtistInfo.jsx'
 //Grid Context
 import {useGalleryContext} from '../context/galleryContext.jsx'
 
-const Grid = (props) => {
+const Grid = () => {
   const imageUrl='https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2545.jpg?w=360'
   const context= useGalleryContext()
   const { galleryApi, artistInfoApi, showInfo, query, setFavs, favs } = context
-  
+
   useEffect(()=>{
     localStorage.setItem('favs',JSON.stringify(favs))
-    
+    console.log('favsUseEffect: ', favs)
+
   },[favs])
-
-  function handleFavClick(item){
-    let storage=localStorage.getItem('favs')
-    if(storage===null){
-      setFavs(item)
-    }else {
-      favs.forEach(fav => {
-        if(fav.id==item.id){
-          return
-        }
-     setFavs((current)=>[...current, item])
-     return
-    })
-    }
-   
   
-    // let storage=localStorage.getItem('favs')
-    // // console.log(item)
-    // if(storage===null){
-    //   setFavs(item)
-    //   localStorage.setItem('favs',JSON.stringify(favs))
-    // }else if(storage){
-    //   setFavs((current)=>[...current, item])
-    //   localStorage.setItem('favs',JSON.stringify(favs))
-    //   // console.log(favs)
-    //   console.log(storage)
-    // 
-
+  function handleFavClick(item){
+    let favArr=favs
+    let addArr=true
+    let id=item.id
+    favArr.map((fav) => {
+      if(fav.id === id){
+        addArr= false
+        console.log(fav.id, id)
+      }
+    })
+    if(addArr){
+      favArr.push(item)
+    }
+    setFavs([...favArr])
   }
-  // console.log('context:',context)
-  // console.log(artistInfoApi[0])
-  console.log('showInfo:',showInfo)
+    //   setFavs((current)=>[...current, item])
   return (
     <>
        <div className='container-fluid'>
@@ -60,7 +46,7 @@ const Grid = (props) => {
                 return null
               }).map((item,id) => (
                 <div key={item.id} className="cards col-lg-3 col-md-4 col-sm-6 text-center" >
-                    <img src={imageUrl} className='img-fluid mx-auto' />
+                    <img src={item.url} className='img-fluid mx-auto' />
                     <button onClick={()=>handleFavClick(item)} className='like-btn' id='id' >
                      <i className="bi bi-hand-thumbs-up"></i>
                     </button>
