@@ -1,19 +1,41 @@
-import {useGalleryContext} from '../context/galleryContext.jsx'
 import ArtistInfo from './ArtistInfo.jsx'
-
-const Favourites = () => {
+import { useEffect } from 'react'
+const Favourites = ({ artistInfoApi, query, showInfo, setFavs,favs, favDisplay }) => {
   // const imageUrl='https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2545.jpg?w=360'
-  const context = useGalleryContext()
-  const { artistInfoApi, query,showInfo} =context
-  let storage=JSON.parse(localStorage.getItem('favs'))
+ 
+  let storage =favs
+  console.log(favs)
+  useEffect(() => {
+    localStorage.setItem('favs',JSON.stringify(favs))
+  },[favs])
+  
+  function handleRemoveFav(item){
+    let favArr=storage
+    let id
+    let removeFav=false
+    favArr.map((fav,favIndex)=>{
+      if(fav.id === item.id){
+        removeFav=true
+        id=favIndex
+      }
+    })
+    // console.log(id)
+    if(removeFav){
+      favArr.splice(id,1)
+    }
+    setFavs([...favArr])
+    console.log(favs)
 
-
+  }
   return (
     <>
         <div className='row'>
          {
-           context.loading
-           ? <h1>Loading</h1>
+           favs.length==0
+           ? <div className='favs-empty'>
+              <p className='m-2'>you don't have favourites yet...</p>
+            </div>
+           
            :storage.filter((item)=>{
              if(query==''){
                return item
@@ -23,8 +45,8 @@ const Favourites = () => {
              return null
            }).map((item,id) => (
              <div key={item.id} className="cards col-lg-2 col-md-4 col-sm-6 text-center" >
-                 <img src={item.url} className='img-fluid mx-auto' />
-                 <button onClick={()=>handleFavClick(item)} className='dislike-btn' id='id' >
+                 <img onClick={()=>favDisplay(item, artistInfoApi)} src={item.url} className='img-fluid mx-auto' />
+                 <button onClick={()=>handleRemoveFav(item)} className='dislike-btn' id='id' >
                   <i className="bi bi-hand-thumbs-down"></i>
                  </button>
                  <div className='mt-1 card-info'>
@@ -35,7 +57,7 @@ const Favourites = () => {
                       {
                         showInfo ?
                         <span>...</span>:
-                        <ArtistInfo  item={item} itemId={id} artistInfo={artistInfoApi}></ArtistInfo>
+                        <ArtistInfo  item={item} artistInfo={artistInfoApi}></ArtistInfo>
                       }
                   </div>
              </div>

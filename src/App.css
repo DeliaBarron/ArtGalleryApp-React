@@ -113,13 +113,13 @@ button{
   font-size: 13px;
 }
 .artist-info{
-font-size: 10px;
+font-size: 8px;
 }
 
 .artist-info__ul{
   font-weight: 550;
   text-align: end;
-  border-right: 2px solid darkorchid;
+  border-right: 2px solid rgb(153, 50, 204);
   list-style-type: none;
   padding: 0;
   margin: 0; 
@@ -128,10 +128,7 @@ font-size: 10px;
 #artist-info-btn{
   font-size: 1.3rem;
 }
-.blog{
-  /* background-color:rgba(77, 77, 77, 0.120); */
 
-}
 .blog-foto{
 height: 300px;
 /* width: 10px; */
@@ -140,4 +137,11 @@ background:rgb(194, 49, 49);
 }
 .blog-info{
   font-style:italic;
+}
+.favs-empty{
+  background-color: rgba(153, 50, 204, 0.150);
+  height: 70vh;
+  color:gray;
+  font-style: italic;
+
 }

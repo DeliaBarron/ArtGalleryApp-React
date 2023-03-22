@@ -1,19 +1,10 @@
 import React, { useEffect } from 'react'
 import ArtistInfo from './ArtistInfo.jsx'
-//Grid Context
-import {useGalleryContext} from '../context/galleryContext.jsx'
 
-const Grid = () => {
+
+const Grid = ({  artistInfoApi, galleryApi, query, showInfo, setFavs, favs, loading }) => {
   const imageUrl='https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2545.jpg?w=360'
-  const context= useGalleryContext()
-  const { galleryApi, artistInfoApi, showInfo, query, setFavs, favs } = context
-
-  useEffect(()=>{
-    localStorage.setItem('favs',JSON.stringify(favs))
-    console.log('favsUseEffect: ', favs)
-
-  },[favs])
-  
+ 
   function handleFavClick(item){
     let favArr=favs
     let addArr=true
@@ -28,6 +19,7 @@ const Grid = () => {
       favArr.push(item)
     }
     setFavs([...favArr])
+    localStorage.setItem('favs',JSON.stringify(favs))
   }
     //   setFavs((current)=>[...current, item])
   return (
@@ -35,7 +27,7 @@ const Grid = () => {
        <div className='container-fluid'>
         <div className='row gallery mt-3'>
             {
-              context.loading
+              loading
               ? <h1>Loading</h1>
               :galleryApi.filter((item)=>{
                 if(query==''){
@@ -58,7 +50,7 @@ const Grid = () => {
                       {
                         showInfo ?
                         <span>...</span>:
-                        <ArtistInfo  item={item} itemId={id} artistInfo={artistInfoApi}></ArtistInfo>
+                        <ArtistInfo  item={item} artistInfo={artistInfoApi}></ArtistInfo>
                       }
                       </div>
                 </div>
