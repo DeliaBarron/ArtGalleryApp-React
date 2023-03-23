@@ -11,7 +11,7 @@ const {setQuery, setShowInfo, showInfo}=context
     <nav>
       <div className="title">
             <Link className="logoLink" to='./'>
-                <h3 className="logo">API ART GALLERY</h3>
+                <h1 className="logo">API ART GALLERY</h1>
             </Link>
         </div>
         <div className="profile">
@@ -20,6 +20,7 @@ const {setQuery, setShowInfo, showInfo}=context
             </Link>
       </div>
       </nav>
+
       <div className="queryContainer">
         <input onChange={(e)=>setQuery(e.target.value)} type="text" className="query" id="query"  placeholder="Search album id or title..."/>
         <button onClick={()=>setShowInfo(!showInfo)} type="button" id="artist-info-btn" >ADD ARTIST INFO</button>

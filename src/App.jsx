@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 //components
 import Navbar from './components/Navbar.jsx'
-import AppRoutes from './assets/routes/AppRoutes.jsx';
+import AppRoutes from './routes/AppRoutes.jsx';
+import Footer from './components/Footer.jsx';
 
 //context
 import { GalleryProvider } from './context/galleryContext.jsx'
@@ -18,7 +19,9 @@ function App() {
            <Navbar />
            <AppRoutes />
         </GalleryProvider>
-        </BrowserRouter>
+        <Footer></Footer>
+      </BrowserRouter>
+      
     </div>
   )
 }

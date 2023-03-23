@@ -12,22 +12,29 @@ const Profile = () => {
 
   const [favDisplayed, setFavDisplayed]=useState()
 
+  // let displayArtistInfo
  
+  let artist
   function handleFavDisplay(item, artistInfo){
-    
-    setFavDisplayed(item)
+    artistInfo.forEach((ele, index) => {
+      if((index+1)===item.id){
+        artist=ele
+      }
+      return artist
+    })
+    setFavDisplayed([item,artist])
   }
 
   return (
     <>
       
-        <div className='container-fluid'>
+        <div className='container-fluid profile-container'>
           <div className='row gallery mt-3'>
             <div className='col-6 favs-art'>
               <Favourites artistInfoApi={artistInfoApi} query={query} favDisplay={handleFavDisplay} showInfo={showInfo} setFavs={setFavs} favs={favs}  ></Favourites>
             </div>
             <div className='col-6 favs-user'>
-                <Blogs favs={favs}  display={favDisplayed} ></Blogs>
+                <Blogs favs={favs} artist={artist} display={favDisplayed} ></Blogs>
               </div>
           </div>
         </div>

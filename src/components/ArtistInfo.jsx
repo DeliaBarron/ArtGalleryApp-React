@@ -13,7 +13,7 @@ const ArtistInfo = ({artistInfo, item}) => {
       
         <ul className='artist-info__ul mt-2'>
          <li>{artist.name}</li>
-         <li>{artist.email}</li>
+         <li style={{overflow: 'hidden'}}>{artist.email}</li>
          <li>{artist.address.city} City</li>
         </ul>
       

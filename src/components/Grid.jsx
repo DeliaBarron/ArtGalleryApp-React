@@ -43,13 +43,14 @@ const Grid = ({  artistInfoApi, galleryApi, query, showInfo, setFavs, favs, load
                      <i className="bi bi-hand-thumbs-up"></i>
                     </button>
                     <div className='mt-1 card-info'>
-                        <h5 id='id'>ID: {item.id}</h5> 
-                        <span>{item.title}</span>
+                        <h5  id='id'>ID: {item.id}</h5> 
+                        <span style={{fontStyle:"italic"}} >{`"...${item.title.substring(0,10)}....."`}</span>
                     </div>
                     <div>
                       {
                         showInfo ?
-                        <span>...</span>:
+                        <span style={{color:"gray", fontStyle:"italic", fontSize:'12px'}}>[add artist info]</span>
+                        :
                         <ArtistInfo  item={item} artistInfo={artistInfoApi}></ArtistInfo>
                       }
                       </div>

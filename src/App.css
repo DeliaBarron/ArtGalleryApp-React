@@ -5,55 +5,66 @@
   text-align: center;
   color: black;
 } */
+@font-face {
+  src: url(./assets/FONTS/BebasNeue-Regular.ttf);
+  font-family:bebasFont;
+}
 
+*{
+  background-color: rgb(228, 228, 228); 
+   /* position: relative; */
+  /* min-height: 100vh; */
+}
 body{
   margin: 0;
-
+  /* min-height: 100%; */
+  display: flex;
+  flex-direction: column;
 }
 nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-family: sans-serif;
-  border-bottom: 0.5px black solid;
+  border-bottom: 1px black solid;
   margin-bottom: 1%;
+  font-family:bebasFont;
 }
 .logoLink{
   text-decoration: none;
   color: black;
 }
 .logo{
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 1% 5% 1% 5%;
   padding: 0;
   font-weight: 500;
+  color: rgb(129, 214, 0);
 }
 .profile{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px black solid; 
+  border: 2px rgb(129, 214, 0) solid; 
   border-radius:100%;
   width: 60px;
   height: 60px;
   margin-right: 1%;
-
 }
 
 .likes-page{
   font-weight: 100;
   font-size: 1.5rem;
   text-decoration: none;
-  color: black;
+  color: rgb(129, 214, 0);
 }
-.likes-page:hover{
+.likes-page:hover {
   transition-duration: .3s;
   height:100%;
   width:100%;
   border-radius: 50%;
-  background-color: rgba(153, 50, 204, 0.400);
+  background-color:rgb(129, 214, 0);
   padding: 11px 0px 0px 17px;
 }
 .queryContainer{
@@ -63,25 +74,32 @@ nav{
 .query{
   border:none;
   outline: none;
-  border-bottom: 1px solid darkorchid;
+  border-bottom: 2px solid rgb(129, 214, 0);
   margin-right: 2%;
   width: 30%;
+  font-family: bebasFont;
+  letter-spacing: 1px;
 }
 button{
-
   padding-inline: 10%;
   background-color: transparent;
   font-size: 1.3rem;
-  font-weight: 500;
-  /* background-color: black; */
-  color:  darkorchid;
-  border: solid 1.5px darkorchid;
+  font-weight: 700;
+  color: rgb(129, 214, 0);
+  border: solid 2px rgb(129, 214, 0);
   cursor: pointer;
 }
 .cards{
   display: flex;
   flex-direction: column;
   position: relative;
+}
+.bi{
+  background: transparent;
+  color: black;
+}
+.bi-palette{
+  color:rgb(129, 214, 0);
 }
 .like-btn{
   position: absolute;
@@ -101,10 +119,10 @@ button{
   transition-duration:.1s;
   font-size: 20.8px;
 }
-.like-btn:hover{
+.like-btn:hover, .dislike-btn:hover{
   transition: .2s; 
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color:  rgb(204, 203, 203);
 }
 .like-btn:active{
   transform: scale(0.5);
@@ -115,33 +133,107 @@ button{
 .artist-info{
 font-size: 8px;
 }
-
 .artist-info__ul{
   font-weight: 550;
   text-align: end;
-  border-right: 2px solid rgb(153, 50, 204);
+  /* border-right: 2px solid rgb(153, 50, 204); */
+  border-right: 3px solid rgb(129, 214, 0);
   list-style-type: none;
   padding: 0;
   margin: 0; 
 }
-
 #artist-info-btn{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  padding-inline: 5%;
+  font-family: bebasFont;
+}
+#artist-info-btn:hover{
+  transition: .2s; 
+  background-color:rgb(129, 214, 0);
+  color: black;
 }
 
 .blog-foto{
-height: 300px;
-/* width: 10px; */
-background:rgb(194, 49, 49);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  height: 50vh;
+  background-color:  rgb(129, 214, 0, 0.500);
+/* border: 1.5px solid rgb(129, 214, 0); */
+/* background-color: black; */
 
 }
-.blog-info{
-  font-style:italic;
-}
+
 .favs-empty{
-  background-color: rgba(153, 50, 204, 0.150);
+  /* background-color: rgba(153, 50, 204, 0.150); */
+  background-color: rgb(129, 214, 0, 0.200);
   height: 70vh;
   color:gray;
   font-style: italic;
-
 }
+.fav-img{
+  cursor: pointer;
+}
+.blog-title{
+  font-family:bebasFont;
+}
+.blog-about-photo p{
+  margin: 0;
+  font-size: 15px;
+  font-weight: 200;
+  font-style:italic;
+}
+/**************/
+.highlight-text{
+  letter-spacing: 1px;
+  text-align: center;
+  font-family:bebasFont;
+  padding-inline: 10px;
+
+    background-image:linear-gradient(
+      -100deg,
+
+      rgb(129, 214, 0),
+      rgb(162, 242, 131),
+      rgb(232, 255, 188)50%,
+      rgb(162, 242, 131),
+      rgb(129, 214, 0)
+
+    ) ;
+}
+footer{
+  border-top: 1px black solid;
+  color: gray;
+  font-family: bebasFont;
+  /* bottom: 100;
+  margin-top: auto; */
+}
+.footer-links{
+  display: flex;
+  justify-content: space-around;
+}
+.about-container, .contact-container, .profile-container{
+  height: 70vh;
+}
+.about-title, .contact-title{
+  font-family: bebasFont;
+  color: gray;
+  font-size:25px ;
+  font-weight: 100;
+}
+.about{
+  padding:1% 30% 10% 30%;
+  color:  rgb(122, 210, 0);
+  font-weight: 100;
+  font-size: 25px;
+  font-family: bebasFont;
+}
+.contact{
+  color:  rgb(122, 210, 0);
+  font-size: 20px;
+}
+.contact-info{
+  text-align: center;
+  font-family: bebasFont;
+ }
