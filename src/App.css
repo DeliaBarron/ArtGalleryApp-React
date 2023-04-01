@@ -1,10 +1,3 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  color: black;
-} */
 @font-face {
   src: url(./assets/FONTS/BebasNeue-Regular.ttf);
   font-family:bebasFont;
@@ -12,15 +5,14 @@
 
 *{
   background-color: rgb(228, 228, 228); 
-   /* position: relative; */
-  /* min-height: 100vh; */
 }
+
 body{
   margin: 0;
-  /* min-height: 100%; */
   display: flex;
   flex-direction: column;
 }
+
 nav{
   display: flex;
   flex-direction: row;
@@ -30,10 +22,12 @@ nav{
   margin-bottom: 1%;
   font-family:bebasFont;
 }
+
 .logoLink{
   text-decoration: none;
   color: black;
 }
+
 .logo{
   font-size: 2.5rem;
   margin: 1% 5% 1% 5%;
@@ -41,6 +35,7 @@ nav{
   font-weight: 500;
   color: rgb(129, 214, 0);
 }
+
 .profile{
   display: flex;
   flex-direction: column;
@@ -59,6 +54,7 @@ nav{
   text-decoration: none;
   color: rgb(129, 214, 0);
 }
+
 .likes-page:hover {
   transition-duration: .3s;
   height:100%;
@@ -67,10 +63,12 @@ nav{
   background-color:rgb(129, 214, 0);
   padding: 11px 0px 0px 17px;
 }
+
 .queryContainer{
   display: flex;
   justify-content: space-evenly;
 }
+
 .query{
   border:none;
   outline: none;
@@ -80,6 +78,7 @@ nav{
   font-family: bebasFont;
   letter-spacing: 1px;
 }
+
 button{
   padding-inline: 10%;
   background-color: transparent;
@@ -89,18 +88,22 @@ button{
   border: solid 2px rgb(129, 214, 0);
   cursor: pointer;
 }
+
 .cards{
   display: flex;
   flex-direction: column;
   position: relative;
 }
+
 .bi{
   background: transparent;
   color: black;
 }
+
 .bi-palette{
   color:rgb(129, 214, 0);
 }
+
 .like-btn{
   position: absolute;
   left: 88%;
@@ -110,6 +113,7 @@ button{
   transition-duration:.1s;
   font-size: 20.8px;
 }
+
 .dislike-btn{
   position: absolute;
   left: 10%;
@@ -119,34 +123,40 @@ button{
   transition-duration:.1s;
   font-size: 20.8px;
 }
+
 .like-btn:hover, .dislike-btn:hover{
   transition: .2s; 
   border-radius: 50%;
   background-color:  rgb(204, 203, 203);
 }
+
 .like-btn:active{
   transform: scale(0.5);
 }
+
 .favs-art{
   font-size: 13px;
 }
+
 .artist-info{
 font-size: 8px;
 }
+
 .artist-info__ul{
   font-weight: 550;
   text-align: end;
-  /* border-right: 2px solid rgb(153, 50, 204); */
   border-right: 3px solid rgb(129, 214, 0);
   list-style-type: none;
   padding: 0;
   margin: 0; 
 }
+
 #artist-info-btn{
   font-size: 1.5rem;
   padding-inline: 5%;
   font-family: bebasFont;
 }
+
 #artist-info-btn:hover{
   transition: .2s; 
   background-color:rgb(129, 214, 0);
@@ -160,31 +170,30 @@ font-size: 8px;
   width: 600px;
   height: 50vh;
   background-color:  rgb(129, 214, 0, 0.500);
-/* border: 1.5px solid rgb(129, 214, 0); */
-/* background-color: black; */
-
 }
 
 .favs-empty{
-  /* background-color: rgba(153, 50, 204, 0.150); */
   background-color: rgb(129, 214, 0, 0.200);
   height: 70vh;
   color:gray;
   font-style: italic;
 }
+
 .fav-img{
   cursor: pointer;
 }
+
 .blog-title{
   font-family:bebasFont;
 }
+
 .blog-about-photo p{
   margin: 0;
   font-size: 15px;
   font-weight: 200;
   font-style:italic;
 }
-/**************/
+
 .highlight-text{
   letter-spacing: 1px;
   text-align: center;
@@ -202,37 +211,42 @@ font-size: 8px;
 
     ) ;
 }
+
 footer{
   border-top: 1px black solid;
   color: gray;
   font-family: bebasFont;
-  /* bottom: 100;
-  margin-top: auto; */
 }
+
 .footer-links{
   display: flex;
   justify-content: space-around;
 }
+
 .about-container, .contact-container, .profile-container{
   height: 70vh;
 }
+
 .about-title, .contact-title{
   font-family: bebasFont;
   color: gray;
   font-size:25px ;
   font-weight: 100;
 }
+
 .about{
-  padding:1% 30% 10% 30%;
+  padding:1% 30% 1% 30%;
   color:  rgb(122, 210, 0);
   font-weight: 100;
   font-size: 25px;
   font-family: bebasFont;
 }
+
 .contact{
   color:  rgb(122, 210, 0);
   font-size: 20px;
 }
+
 .contact-info{
   text-align: center;
   font-family: bebasFont;
